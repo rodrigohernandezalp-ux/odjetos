@@ -68,3 +68,44 @@ console.log(nombre, precio);
 const {cantidad, nota = "sin nota"} = pedido;
 console.log(cantidad, nota);
 console.log("Diego Rodrigo Gael Hernandez Najera")
+
+///paso 7 ---- total
+const total = producto.precio * pedido.cantidad;
+pedido.total = total
+
+console.log("----paso 7 ---")
+console.log(pedido);
+
+
+///------------paso 8 copiar---------
+console.log("paso 8")
+const copiamala = producto;
+copiamala.precio = 999;
+console.log(producto.precio);
+// va a imprimir 999 copiamala y producto a puenta al mismo objeto
+// la variable no guarda el objeto guarda donde esta
+
+
+producto.precio = 15;// lo dejamos como estaba
+
+const copiabuena = {...producto};
+copiabuena.precio = 1000;
+console.log(producto.precio);//el horiginal quedo intacto
+
+//-----paso 9 ---------
+console.log("paso9");
+const respuestaOK = {
+    ok:true,
+    data:pedido
+};
+
+const respuestaError = {
+    ok:{
+        mensaje:"El producto no esta disponible",
+        detalles:[]
+    }
+};
+
+
+console.log(respuestaOK);
+console.log(respuestaError);
